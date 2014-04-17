@@ -8,20 +8,21 @@
 #include "../Headers/Shared.h"
 #include <avr/io.h>
 #include <util/delay.h>
-
+//#include "Uart.c"
+//#include "Icsp.c"
 static uint8_t Reply[2];
 static uint8_t RxBuff[RX_SIZE];
 static uint8_t Invitation[] = "Avr Board"; 
 
-extern void InitUart(void);
-extern void SendBuffer(uint8_t[], uint8_t);
-extern void ReceiveBuffer(uint8_t[], uint8_t); 
+void InitUart(void);
+void SendBuffer(uint8_t[], uint8_t);
+void ReceiveBuffer(uint8_t[], uint8_t); 
 
-extern void SetMclr(uint8_t value); // 0x1X
-extern void ClockControlBits(uint8_t value); // 0x2X
-extern void ClockLowXTimes(uint8_t value); // 0x3X
-extern void ClockByte(uint8_t value); // partially 0x5X
-extern void PinByte(uint8_t *value); // partially 0x6X
+void SetMclr(uint8_t value); // 0x1X
+void ClockControlBits(uint8_t value); // 0x2X
+void ClockLowXTimes(uint8_t value); // 0x3X
+void ClockByte(uint8_t value); // partially 0x5X
+void PinByte(uint8_t *value); // partially 0x6X
 
 // MCLR	0x04 (100)
 // PGD	0x02 (010)

@@ -7,7 +7,7 @@
  
 #include <avr/io.h>
 
-#define nop() asm volatile("nop")
+#define nop()  __asm__("nop\n\t")
 
 // MCLR	0x04 (100)
 // PGD	0x02 (010)
